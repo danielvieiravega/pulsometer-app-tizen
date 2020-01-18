@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<w:CirclePage
+    x:Class="PulsometerSDC.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:w="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+    RotaryFocusObject="{Binding RotaryFocusTarget}">
+    <w:CirclePage.Content>
+        <AbsoluteLayout>
+            <Image AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       Source="background.png" />
+
+            <Image x:Name="measuringIndicator"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds="155, 64, 50, 44"
+                       Source="heart.png"
+                       IsVisible="False" />
+
+            <Label x:Name="hrValue"
+                       TextColor="#454545"
+                       FontSize="20"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds="127, 169, 104, 48"
+                       HorizontalTextAlignment="Center"
+                       Text="0" />
+        </AbsoluteLayout>
+    </w:CirclePage.Content>
+    <w:CirclePage.ActionButton>
+        <w:ActionButtonItem Text="MEASURE"
+                                  x:Name="actionButton"
+                                  Clicked="OnActionButtonClicked" />
+    </w:CirclePage.ActionButton>
+</w:CirclePage>
